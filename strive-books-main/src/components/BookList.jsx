@@ -41,7 +41,7 @@ class BookList extends React.Component {
                         </Row>
                     </Col>
                     <Col md={4}>
-                    {/* <CommentArea asin={this.props.book.asin} /> */}
+                    <CommentArea asin={this.state.selectedBook} />
                     </Col>
                 </Row>
             </Container>
