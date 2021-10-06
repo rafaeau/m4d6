@@ -8,13 +8,18 @@ class CommentArea extends Component {
 
     state = {
         comments: [], // comments will go here
-        isLoading: true,
+        isLoading: false,
         isError: false
     }
 
     componentDidUpdate = async (prevProps) => {
 
         if (prevProps.asin !== this.props.asin) {
+
+            this.setState({
+                isLoading: true
+            })
+            
         try {
             let response = await fetch('https://striveschool-api.herokuapp.com/api/comments/' + this.props.asin, {
                 headers: {
